@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?><?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#818181"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="#94F389"
+        android:paddingVertical="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <ImageButton
+            android:id="@+id/hamburger_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/baseline_dehaze_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="Счета" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/result_price_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Итого:"
+        android:textSize="17sp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/result_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="68 050 р"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@id/result_price_title"
+        app:layout_constraintStart_toStartOf="@id/result_price_title"
+        app:layout_constraintTop_toBottomOf="@id/result_price_title" />
+
+    <ImageView
+        android:id="@+id/history_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="70dp"
+        android:src="@drawable/baseline_history_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/result_price" />
+
+    <ImageView
+        android:id="@+id/sync_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="70dp"
+        android:src="@drawable/baseline_sync_alt_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/result_price" />
+    <TextView
+        android:id="@+id/transaction_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="История переводов"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@id/history_image"
+        app:layout_constraintStart_toStartOf="@id/history_image"
+        app:layout_constraintTop_toBottomOf="@id/history_image" />
+
+    <TextView
+        android:id="@+id/create_transaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Создать перевод"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@id/sync_image"
+        app:layout_constraintStart_toStartOf="@id/sync_image"
+        app:layout_constraintTop_toBottomOf="@id/sync_image" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="transaction_history,create_transaction"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/card_background"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barier">
+
+        <ImageView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_attach_money_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="Основной"
+            android:textColor="#FFFFFF"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="68 050 р"
+            android:textColor="#FFFFFF"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:padding="15dp"
+        android:src="@drawable/baseline_add_24"
+        android:background="@drawable/bottom_button_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
